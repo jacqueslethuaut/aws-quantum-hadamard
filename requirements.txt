@@ -1,0 +1,4 @@
+#python 3.10
+boto3==1.28.57 
+amazon-braket-sdk==1.56.1
+

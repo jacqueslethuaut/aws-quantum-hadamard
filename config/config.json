@@ -1,0 +1,30 @@
+{
+  "version": "2.0",
+  "app_name": "aws-quantum-hadamard",
+  "IAMRoles": [
+    {
+      "RoleName": "BraketRole",
+      "Policies": ["AmazonBraketFullAccess"]
+    },
+    {
+      "RoleName": "S3Role",
+      "Policies": ["AmazonS3FullAccess"]
+    },
+    {
+      "RoleName": "LambdaRole",
+      "Policies": ["AWSLambdaBasicExecutionRole"]
+    }
+  ],
+  "Lambda": {
+    "FunctionName": "YourLambdaFunctionName",
+    "Handler": "lambda_function.handler"
+  },
+  "S3": {
+    "BucketName": "s3-test-hadamard-gate",
+    "Prefix": "s3-prefix-quantum-hadamard"
+  },
+  "Quantum": {
+    "DeviceARN": "arn:aws:braket:eu-west-2::device/qpu/oqc/Lucy",
+    "Shots": 1000
+  }
+}
