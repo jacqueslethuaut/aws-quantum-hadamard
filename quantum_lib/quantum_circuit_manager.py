@@ -1,8 +1,7 @@
 import asyncio
 from braket.aws import AwsDevice
-from braket.circuits import Circuit
+from braket.circuits import Circuit, gates
 from .hadamard_gate import apply_hadamard_gate
-
 
 class QuantumCircuitManager:
     def __init__(self, config):
@@ -31,12 +30,19 @@ class QuantumCircuitManager:
         return circuit
 
 
-    def apply_gates(self, circuit: Circuit, target_qubit):
+    def apply_gates(self, circuit: Circuit, target_qubit, entangle=False):
         """
         Apply gates to the given circuit.
+        If entangle is True, it will add a CNOT gate to entangle qubits.
         """
-        apply_hadamard_gate(circuit, target_qubit)  
-
+        apply_hadamard_gate(circuit, target_qubit)
+        
+        if entangle:
+            control_qubit = target_qubit  
+            target_qubit_for_cx = target_qubit + 1  
+            
+            # Apply a CNOT gate to create an entangled state
+            circuit.cnot(control=control_qubit, target=target_qubit_for_cx)
 
     def run_circuit(self, circuit: Circuit) -> str:
         """
