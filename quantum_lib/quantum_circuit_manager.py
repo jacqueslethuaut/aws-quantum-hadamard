@@ -1,3 +1,8 @@
+# MIT License
+
+# Copyright (c) 2023 Jacques Le Thuaut
+
+
 import asyncio
 from braket.aws import AwsDevice
 from braket.circuits import Circuit, gates

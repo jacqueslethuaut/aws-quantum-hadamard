@@ -1,3 +1,7 @@
+# MIT License
+
+# Copyright (c) 2023 Jacques Le Thuaut
+
 import os
 import boto3
 import json

@@ -1,3 +1,7 @@
+# MIT License
+
+# Copyright (c) 2023 Jacques Le Thuaut
+
 from braket.circuits import Circuit
 
 def apply_hadamard_gate(circuit, target_qubit):
