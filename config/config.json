@@ -24,7 +24,7 @@
     "Prefix": "s3-prefix-quantum-hadamard"
   },
   "Quantum": {
-    "DeviceARN": "arn:aws:braket:eu-west-2::device/qpu/oqc/Lucy",
+    "DeviceARN": "arn:aws:braket:::device/quantum-simulator/amazon/sv1",
     "Shots": 1000
   }
 }

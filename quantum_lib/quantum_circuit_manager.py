@@ -6,19 +6,19 @@
 import asyncio
 from braket.aws import AwsDevice
 from braket.circuits import Circuit, gates
-from .hadamard_gate import apply_hadamard_gate
+from .quantum_circuit import QuantumCircuit
 
 class QuantumCircuitManager:
     def __init__(self, config):
         self.s3_folder = (config['S3']['BucketName'], config['S3']['Prefix'])
         self.device = AwsDevice(config['Quantum']['DeviceARN'])
         self.shots = config['Quantum']['Shots']
-        self.circuit = Circuit()
+        self.circuit = QuantumCircuit(2)
         self.latest_task = None 
 
 
     async def run_circuit(self):
-        task = self.device.run(self.circuit, self.s3_folder, shots=1000)
+        task = self.device.run(self.circuit.get_circuit(), self.s3_folder, shots=self.shots)
         status = task.state()
         while status in ['CREATED', 'QUEUED', 'RUNNING']:
             await asyncio.sleep(5)  # Non-blocking sleep
@@ -27,33 +27,18 @@ class QuantumCircuitManager:
         return result.measurement_counts
 
 
-    def create_basic_circuit(self) -> Circuit:
+    def apply_gates(self, target_qubit, entangle=False):
         """
-        Create a basic quantum circuit.
-        """
-        circuit = Circuit()
-        return circuit
-
-
-    def apply_gates(self, circuit: Circuit, target_qubit, entangle=False):
-        """
-        Apply gates to the given circuit.
+        Apply gates to the internal QuantumCircuit object.
         If entangle is True, it will add a CNOT gate to entangle qubits.
         """
-        apply_hadamard_gate(circuit, target_qubit)
-        
-        if entangle:
-            control_qubit = target_qubit  
-            target_qubit_for_cx = target_qubit + 1  
-            
-            # Apply a CNOT gate to create an entangled state
-            circuit.cnot(control=control_qubit, target=target_qubit_for_cx)
+        self.circuit.apply_gates(target_qubit, entangle)
 
-    def run_circuit(self, circuit: Circuit) -> str:
+    def run_circuit(self) -> str:
         """
         Run the circuit on the specified device and return the task ARN.
         """
-        task = self.device.run(circuit, shots=1000)
+        task = self.device.run(self.circuit.get_circuit(), shots=1000)
         self.latest_task = task
         return task.id
 
