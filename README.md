@@ -23,7 +23,7 @@ $$H = \frac{1}{\sqrt{2}}
 Mathematically, the action of a Hadamard gate on a qubit $∣ \psi \rangle$ can be expressed as:
 
 $$
-H ∣ \psi \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle + e^{i\phi} ∣ 1 \rangle )
+H ∣ \psi \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle + e^{i \phi} ∣ 1 \rangle )
 $$
 
 where $\phi$ is the phase of $∣\psi\rangle$.<br>
@@ -32,7 +32,9 @@ The Hadamard gate is particularly interesting because it transforms the basis st
 <br>
 Something like that:
 $$
-H ∣ 0 \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle + ∣ 1 \rangle )$$
+H ∣ 0 \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle + ∣ 1 \rangle )
+$$
+and
 $$
 H ∣ 1 \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle - ∣ 1 \rangle )
 $$
