@@ -1,4 +1,5 @@
-#python 3.10
-boto3==1.28.57 
-amazon-braket-sdk==1.56.1
-
+amazon_braket_default_simulator==1.20.0.post0
+amazon_braket_schemas==1.19.1.post0
+amazon_braket_sdk==1.56.1
+boto3==1.28.57
+botocore==1.31.57
