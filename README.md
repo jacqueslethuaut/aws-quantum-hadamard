@@ -31,13 +31,17 @@ where $\phi$ is the phase of $∣\psi\rangle$.<br>
 The Hadamard gate is particularly interesting because it transforms the basis states $∣0\rangle$ and $∣1\rangle$ into superpositions.<br>
 <br>
 Something like that:
+
 $$
 H ∣ 0 \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle + ∣ 1 \rangle )
 $$
+
 and
+
 $$
 H ∣ 1 \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle - ∣ 1 \rangle )
 $$
+
 The Hadamard gate is often used at the beginning of quantum algorithms to create a superposition of basis states, which then evolve differently due to subsequent quantum gates, thereby enabling the parallelism inherent in quantum computing. <br>
 <br>
 Reminder : Superposition refers to the ability of a quantum system to exist in multiple states simultaneously. <br>
