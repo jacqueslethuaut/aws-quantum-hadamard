@@ -45,10 +45,12 @@ $$
 The Hadamard gate is often used at the beginning of quantum algorithms to create a superposition of basis states, which then evolve differently due to subsequent quantum gates, thereby enabling the parallelism inherent in quantum computing. <br>
 <br>
 Reminder : Superposition refers to the ability of a quantum system to exist in multiple states simultaneously. <br>
-For a single qubit $∣ \psi \rangle$,  the principle of superposition allows it to be in a linear combination of its basis states $∣ 0 \rangle$ and $∣ 1 \rangle$ 
+For a single qubit $∣ \psi \rangle$,  the principle of superposition allows it to be in a linear combination of its basis states $∣ 0 \rangle$ and $∣ 1 \rangle$
+
 $$
 ∣ \psi \rangle = \alpha ∣ 0 \rangle + \beta ∣ 1 \rangle
 $$
+
 with $|\alpha|^2+|\beta|^2=1$, $\alpha$ and $\beta$ are complex numbers
 
 ## Hadamard and Entanglement
