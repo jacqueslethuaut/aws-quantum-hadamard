@@ -55,9 +55,11 @@ with $|\alpha|^2+|\beta|^2=1$, $\alpha$ and $\beta$ are complex numbers
 
 ## Hadamard and Entanglement
 Entanglement is a phenomenon where the states of two or more qubits become correlated in such a way that the state of one qubit immediately influences the state of another, no matter the distance separating them. An example of an entangled state for two qubits is the Bell state:
+
 $$
 ∣ \Psi^+ \rangle = \frac{1}{\sqrt{2}} ( ∣ 00 \rangle + ∣ 11 \rangle )
 $$
+
 In this state, if you measure the first qubit and find it in state $∣ 0 \rangle$ , the second qubit will also be in state $∣ 0 \rangle$, and vice versa.<br>
 <br>
 Entanglement is often created by first putting one or more qubits into a superposition and then applying a gate that correlates them. <br>
@@ -65,6 +67,7 @@ Entanglement is often created by first putting one or more qubits into a superpo
 
 1. Start with two qubits in the state $∣ 00 \rangle$ 
 2. Apply a Hadamard gate H to the first qubit, creating a superposition:
+
 $$
 H ∣ 0 \rangle = \frac{1}{\sqrt{2}} ( ∣ 0 \rangle + ∣ 1 \rangle )
 $$ 
@@ -72,6 +75,7 @@ $$
 $$
 \frac{1}{\sqrt{2}} ( ∣ 0 \rangle + ∣ 1 \rangle ) \otimes ∣ 0 \rangle = \frac{1}{\sqrt{2}} ( ∣ 00 \rangle + ∣ 10 \rangle )
 $$
+
 3. Apply a CNOT gate with the first qubit as control and the second as target. The CNOT gate flips the second qubit if the first qubit is $| 1 \rangle$ . After this step, the system becomes entangled: 
 
 $$
